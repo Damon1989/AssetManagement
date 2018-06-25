@@ -25,6 +25,14 @@ namespace AssetManagement.Web
                     )
                 ).AddItem(
                     new MenuItemDefinition(
+                        PageNames.Home,
+                        L("HomePage"),
+                        url: "",
+                        icon: "home",
+                        requiresAuthentication: true
+                    )
+                ).AddItem(
+                    new MenuItemDefinition(
                         PageNames.Tenants,
                         L("Tenants"),
                         url: "Tenants",
