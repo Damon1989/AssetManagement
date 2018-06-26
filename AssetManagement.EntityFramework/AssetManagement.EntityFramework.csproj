@@ -235,6 +235,10 @@
     <Compile Include="Migrations\201803261403237_Upgraded_To_Abp_v3_5.Designer.cs">
       <DependentUpon>201803261403237_Upgraded_To_Abp_v3_5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806261450382_adddepartment.cs" />
+    <Compile Include="Migrations\201806261450382_adddepartment.Designer.cs">
+      <DependentUpon>201806261450382_adddepartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="AssetManagementDataModule.cs" />
@@ -269,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803261403237_Upgraded_To_Abp_v3_5.resx">
       <DependentUpon>201803261403237_Upgraded_To_Abp_v3_5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806261450382_adddepartment.resx">
+      <DependentUpon>201806261450382_adddepartment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
