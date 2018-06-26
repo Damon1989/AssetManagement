@@ -23,15 +23,8 @@ namespace AssetManagement.Web
                         icon: "home",
                         requiresAuthentication: true
                     )
-                ).AddItem(
-                    new MenuItemDefinition(
-                        PageNames.Home,
-                        L("HomePage"),
-                        url: "",
-                        icon: "home",
-                        requiresAuthentication: true
-                    )
-                ).AddItem(
+                )
+                .AddItem(
                     new MenuItemDefinition(
                         PageNames.Tenants,
                         L("Tenants"),
@@ -140,6 +133,13 @@ namespace AssetManagement.Web
                         )
                     )
                 );
+
+            var dept = new MenuItemDefinition(
+                PageNames.Dept,
+                L("部门"),
+                url: "Dept",
+                icon: "people");
+            context.Manager.MainMenu.AddItem(dept);
         }
 
         private static ILocalizableString L(string name)
