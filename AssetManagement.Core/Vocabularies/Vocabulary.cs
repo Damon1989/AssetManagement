@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 using Abp.Domain.Entities;
 using Abp.Domain.Entities.Auditing;
 using Abp.Json;
@@ -14,6 +12,8 @@ namespace AssetManagement.Vocabularies
         public string Code { get; set; }
         public string Name { get; set; }
         public DateTime CreationTime { get; set; }
+
+        public virtual IEnumerable<VocabularyItem> Items { get; set; }
 
         public Vocabulary()
         {
@@ -42,24 +42,21 @@ namespace AssetManagement.Vocabularies
 
         public string ExtensionData { get; set; }
 
+        public string VocabularyId { get; set; }
+
+        [ForeignKey("VocabularyId")]
+        public virtual Vocabulary Vocabulary { get; set; }
+
         public VocabularyItem()
         {
             Id = Guid.NewGuid().ToString().Replace("-", "").ToLower();
         }
-    }
 
-    public class VocabularyItem<T> : VocabularyItem
-    {
-        public T Data { get; set; }
-
-        public VocabularyItem()
+        public VocabularyItem(object data, string vocabularyId)
         {
-        }
-
-        public VocabularyItem(T data)
-        {
-            Data = data;
+            Id = Guid.NewGuid().ToString().Replace("-", "").ToLower();
             ExtensionData = data.ToJsonString(true);
+            VocabularyId = vocabularyId;
         }
 
         public void Add(string code, string name)

@@ -56,5 +56,6 @@
     <text name="No" value="否" />
     <text name="Optional" value="可选的" />
     <text name="Depts" value="部门" />
+    <text name="Vocabularies" value="词汇" />
   </texts>
 </localizationDictionary>

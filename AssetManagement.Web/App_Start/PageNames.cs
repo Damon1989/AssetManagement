@@ -8,5 +8,6 @@ namespace AssetManagement.Web
         public const string Users = "Users";
         public const string Roles = "Roles";
         public const string Depts = "Depts";
+        public const string Vocabularies = "Vocabularies";
     }
 }

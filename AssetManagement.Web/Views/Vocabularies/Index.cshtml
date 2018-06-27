@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@section scripts{
+    <script type="text/javascript">
+        $(function() {
+            /*
+            abp.services.app.vocabulary.createVocabulary({
+                "code": "AssetCategory",
+                "name":"资产分类"
+            }).done(function () {
+                abp.notify.success("successfully  created a vocabulary");
+            });
+              */
+            abp.services.app.vocabulary.createAssetVocabulary({
+                "code": "00101",
+                "name":"DELL台式机",
+                "month":12
+            }).done(function () {
+                abp.notify.success("successfully  created a vocabularyitem");
+            });
+
+        })
+    </script>
+}

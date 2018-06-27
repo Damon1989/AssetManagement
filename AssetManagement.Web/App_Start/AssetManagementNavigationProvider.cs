@@ -140,7 +140,15 @@ namespace AssetManagement.Web
                 url: "Depts",
                 icon: "people",
                 requiredPermissionName: PermissionNames.Page_Depts);
+
+            var vocabulary = new MenuItemDefinition(
+                PageNames.Vocabularies,
+                L("Vocabularies"),
+                url: "Vocabularies",
+                icon: "perple");
+
             context.Manager.MainMenu.AddItem(dept);
+            context.Manager.MainMenu.AddItem(vocabulary);
         }
 
         private static ILocalizableString L(string name)

@@ -247,6 +247,10 @@
     <Compile Include="Migrations\201806270952332_addvocabulary.Designer.cs">
       <DependentUpon>201806270952332_addvocabulary.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806271327169_addvocabularyrelation.cs" />
+    <Compile Include="Migrations\201806271327169_addvocabularyrelation.Designer.cs">
+      <DependentUpon>201806271327169_addvocabularyrelation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="AssetManagementDataModule.cs" />
@@ -290,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806270952332_addvocabulary.resx">
       <DependentUpon>201806270952332_addvocabulary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806271327169_addvocabularyrelation.resx">
+      <DependentUpon>201806271327169_addvocabularyrelation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

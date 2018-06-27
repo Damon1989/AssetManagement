@@ -5,7 +5,6 @@
 <h2>Index</h2>
 
 @section scripts{
-    <script src="/api/AbpServiceProxies/GetAll" type="text/javascript"></script>
     <script type="text/javascript">
         $(function () {
             //abp.services.app.dept.createDept({
@@ -26,9 +25,9 @@
             //});
 
             abp.services.app.dept.enableDept({
-                "id": "dae7edc0a14b4b21b7dcdbe2b164907c"
+                "id": "401360afd72b4f648592ab00e39666ad"
             }).done(function () {
-                abp.notify.success("successfully  enabled a dept");
+                abp.notify.success("successfully  created a dept");
             });
 
             abp.services.app.dept.disableDept({

@@ -252,6 +252,8 @@
     <Compile Include="Sessions\ISessionAppService.cs" />
     <Compile Include="Sessions\SessionAppService.cs" />
     <Compile Include="Users\UserAppService.cs" />
+    <Compile Include="Vocabularies\Dto\VocabularyAssetItemInput.cs" />
+    <Compile Include="Vocabularies\Dto\VocabularyConst.cs" />
     <Compile Include="Vocabularies\Dto\VocabularyInput.cs" />
     <Compile Include="Vocabularies\IVocabularyAppService.cs" />
     <Compile Include="Vocabularies\VocabularyAppService.cs" />
