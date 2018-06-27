@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace AssetManagement.Web.Controllers
 {
-    public class DeptController : Controller
+    public class DeptsController : Controller
     {
         // GET: Dept
         public ActionResult Index()

@@ -135,10 +135,11 @@ namespace AssetManagement.Web
                 );
 
             var dept = new MenuItemDefinition(
-                PageNames.Dept,
-                L("部门"),
-                url: "Dept",
-                icon: "people");
+                PageNames.Depts,
+                L("Depts"),
+                url: "Depts",
+                icon: "people",
+                requiredPermissionName: PermissionNames.Page_Depts);
             context.Manager.MainMenu.AddItem(dept);
         }
 
