@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace AssetManagement.Web.Controllers
 {
-    public class DeptsController : AssetManagementControllerBase
+    public class VocabularyController : AssetManagementControllerBase
     {
-        // GET: Dept
+        // GET: Vocabulary
         public ActionResult Index()
         {
             return View();

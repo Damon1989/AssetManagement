@@ -1,8 +1,10 @@
-﻿using System.Reflection;
+﻿using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Abp.Configuration.Startup;
 using Abp.Hangfire;
 using Abp.Hangfire.Configuration;
 using Abp.Zero.Configuration;
@@ -13,6 +15,7 @@ using AssetManagement.Api;
 using Castle.MicroKernel.Registration;
 using Hangfire;
 using Microsoft.Owin.Security;
+using Swashbuckle.Application;
 
 namespace AssetManagement.Web
 {

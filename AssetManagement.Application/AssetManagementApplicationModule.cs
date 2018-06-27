@@ -7,6 +7,7 @@ using Abp.Domain.Repositories;
 using Abp.Modules;
 using AssetManagement.Authorization.Roles;
 using AssetManagement.Authorization.Users;
+using AssetManagement.Depts.Dto;
 using AssetManagement.Roles.Dto;
 using AssetManagement.Users.Dto;
 
@@ -32,12 +33,14 @@ namespace AssetManagement
 
                 cfg.CreateMap<CreateRoleDto, Role>().ForMember(x => x.Permissions, opt => opt.Ignore());
                 cfg.CreateMap<RoleDto, Role>().ForMember(x => x.Permissions, opt => opt.Ignore());
-                
+
                 cfg.CreateMap<UserDto, User>();
                 cfg.CreateMap<UserDto, User>().ForMember(x => x.Roles, opt => opt.Ignore());
 
                 cfg.CreateMap<CreateUserDto, User>();
                 cfg.CreateMap<CreateUserDto, User>().ForMember(x => x.Roles, opt => opt.Ignore());
+
+                cfg.CreateMap<DeptDto, DeptDto>();
             });
         }
     }

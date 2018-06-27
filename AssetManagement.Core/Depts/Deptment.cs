@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Abp.Domain.Entities;
 using Abp.Domain.Entities.Auditing;
 
-namespace AssetManagement.Dept
+namespace AssetManagement.Depts
 {
-    public class Deptment : Entity<string>, IFullAudited
+    public class Deptment : Entity<string>, IFullAudited, IPassivable
     {
         public virtual long? CreatorUserId { get; set; }
         public virtual DateTime CreationTime { get; set; }
@@ -21,11 +17,13 @@ namespace AssetManagement.Dept
         public string Code { get; set; }
         public string Name { get; set; }
         public string ParentId { get; set; }
-        public CommonStatus Status { get; private set; }
+
+        public bool IsActive { get; set; }
 
         public Deptment()
         {
-            CreationTime = DateTime.Now;
+            Id = Guid.NewGuid().ToString().Replace("-", "").ToLower();
+            IsActive = true;
         }
 
         public void Add(string code, string name, string parentId)
@@ -33,34 +31,22 @@ namespace AssetManagement.Dept
             Code = code;
             Name = name;
             ParentId = parentId;
-            Status = CommonStatus.Normal;
         }
 
         public void Edit(string code, string name)
         {
             Code = code;
             Name = name;
-            LastModificationTime = DateTime.Now;
         }
 
         public void Enabled()
         {
-            LastModificationTime = DateTime.Now;
-            Status = CommonStatus.Normal;
+            IsActive = true;
         }
 
         public void Disabled()
         {
-            LastModificationTime = DateTime.Now;
-            Status = CommonStatus.Disabled;
-        }
-
-        public void Delete()
-        {
-            LastModificationTime = DateTime.Now;
-            Status = CommonStatus.Deleted;
-            IsDeleted = true;
-            DeletionTime = DateTime.Now;
+            IsActive = false;
         }
     }
 }

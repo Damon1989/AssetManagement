@@ -212,7 +212,7 @@
     <Compile Include="CommonStatus.cs" />
     <Compile Include="Configuration\AppSettingNames.cs" />
     <Compile Include="Configuration\AppSettingProvider.cs" />
-    <Compile Include="Dept\Deptment.cs" />
+    <Compile Include="Depts\Deptment.cs" />
     <Compile Include="Editions\EditionManager.cs" />
     <Compile Include="Features\FeatureValueStore.cs" />
     <Compile Include="MultiTenancy\Tenant.cs" />
@@ -225,6 +225,7 @@
     <Compile Include="Authorization\Users\UserManager.cs" />
     <Compile Include="Authorization\Users\UserStore.cs" />
     <Compile Include="Validation\ValidationHelper.cs" />
+    <Compile Include="Vocabularies\Vocabulary.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">

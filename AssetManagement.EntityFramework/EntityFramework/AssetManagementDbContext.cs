@@ -3,8 +3,9 @@ using System.Data.Entity;
 using Abp.Zero.EntityFramework;
 using AssetManagement.Authorization.Roles;
 using AssetManagement.Authorization.Users;
-using AssetManagement.Dept;
+using AssetManagement.Depts;
 using AssetManagement.MultiTenancy;
+using AssetManagement.Vocabularies;
 
 namespace AssetManagement.EntityFramework
 {
@@ -47,9 +48,13 @@ namespace AssetManagement.EntityFramework
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Deptment>().ToTable("basic_Departments");
+            modelBuilder.Entity<Vocabulary>().ToTable("basic_Vocabularies");
+            modelBuilder.Entity<VocabularyItem>().ToTable("basic_VocabularyItems");
             base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<Deptment> Deptment { get; set; }
+        public DbSet<Vocabulary> Vocabularies { get; set; }
+        public DbSet<VocabularyItem> VocabularyItems { get; set; }
     }
 }

@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@section scripts{
+    <script src="/api/AbpServiceProxies/GetAll" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            //abp.services.app.dept.createDept({
+            //    "code": "string",
+            //    "name": "string",
+            //    "parentId": "string"
+            //}).done(function () {
+            //    abp.notify.success("successfully  created a dept");
+            //});
+
+            //abp.services.app.dept.editDept({
+            //    "id": "6d5d037393bd469584cd91f09f683a0e",
+            //    "code": "string1",
+            //    "name": "string1",
+            //    "parentId": "string"
+            //}).done(function () {
+            //    abp.notify.success("successfully  edited a dept");
+            //});
+
+            abp.services.app.dept.enableDept({
+                "id": "dae7edc0a14b4b21b7dcdbe2b164907c"
+            }).done(function () {
+                abp.notify.success("successfully  enabled a dept");
+            });
+
+            abp.services.app.dept.disableDept({
+                "id": "401360afd72b4f648592ab00e39666ad"
+            }).done(function () {
+                abp.notify.success("successfully  disabled a dept");
+            });
+
+            abp.services.app.dept.removeDept({
+                "id": "dae7edc0a14b4b21b7dcdbe2b164907c"
+            }).done(function () {
+                abp.notify.success("successfully  deleted a dept");
+            });
+
+            abp.services.app.dept.getDepts().done(function (result) {
+                console.log(result);
+                abp.notify.success("successfully  deleted a dept");
+            });
+        })
+    </script>
+}
