@@ -14,15 +14,62 @@
             }).done(function () {
                 abp.notify.success("successfully  created a vocabulary");
             });
-              */
+               */
+
+             /*
             abp.services.app.vocabulary.createAssetVocabulary({
-                "code": "00101",
-                "name":"DELL台式机",
-                "month":12
+                "code": "00102",
+                "name":"HP台式机",
+                "month":11
+            }).done(function () {
+                abp.notify.success("successfully  created a vocabularyitem");
+            });
+                */
+            /*
+            abp.services.app.vocabulary.updateAssetVocabulary({
+                "id":"07feba5347bd4e14a0c6b63557a7fed3" ,
+                "code": "00102",
+                "name":"HP台式机1",
+                "month":11
+            }).done(function () {
+                abp.notify.success("successfully  created a vocabularyitem");
+            });
+        */
+
+            /*
+            abp.services.app.vocabulary.createVocabulary({
+                "code": "AreaCategory",
+                "name":"区域分类"
+            }).done(function () {
+                abp.notify.success("successfully  created a vocabulary");
+            });
+                 */
+
+            abp.services.app.vocabulary.createAreaVocabulary({
+                "code": "002",
+                "name":"仓库三",
             }).done(function () {
                 abp.notify.success("successfully  created a vocabularyitem");
             });
 
+            /*
+            abp.services.app.vocabulary.updateAreaVocabulary({
+                "id":"28aed7733ec944cea8814da5427c3454",
+                "code": "001",
+                "name":"仓库二1",
+            }).done(function () {
+                abp.notify.success("successfully  created a vocabularyitem");
+            });
+              */
+            abp.services.app.vocabulary.getAssetVocabularies().done(function(result) {
+                console.log(result.items);
+                abp.notify.success("successfully  created a vocabularyitem");
+            });
+
+            abp.services.app.vocabulary.getAreaVocabularies().done(function(result) {
+                console.log(result.items);
+                abp.notify.success("successfully  created a vocabularyitem");
+            });
         })
     </script>
 }

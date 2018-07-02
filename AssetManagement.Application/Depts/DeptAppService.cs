@@ -4,7 +4,6 @@ using System.Web.Http;
 using Abp.Application.Services.Dto;
 using Abp.Domain.Repositories;
 using AssetManagement.Depts.Dto;
-using AssetManagement.Roles.Dto;
 
 namespace AssetManagement.Depts
 {
@@ -38,7 +37,6 @@ namespace AssetManagement.Depts
             if (dept != null)
             {
                 dept.Enabled();
-                await _deptmentRepository.UpdateAsync(dept).ConfigureAwait(false);
             }
         }
 
@@ -49,7 +47,6 @@ namespace AssetManagement.Depts
             if (dept != null)
             {
                 dept.Disabled();
-                await _deptmentRepository.UpdateAsync(dept).ConfigureAwait(false);
             }
         }
 

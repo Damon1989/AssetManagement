@@ -36,6 +36,8 @@ namespace AssetManagement.Web
             //Configure navigation/menu
             Configuration.Navigation.Providers.Add<AssetManagementNavigationProvider>();
 
+            Configuration.Auditing.IsEnabled = false;
+
             //Configure Hangfire - ENABLE TO USE HANGFIRE INSTEAD OF DEFAULT JOB MANAGER
             //Configuration.BackgroundJobs.UseHangfire(configuration =>
             //{

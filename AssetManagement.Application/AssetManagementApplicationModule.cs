@@ -3,13 +3,17 @@ using Abp.Authorization;
 using Abp.Authorization.Roles;
 using Abp.Authorization.Users;
 using Abp.AutoMapper;
+using Abp.Collections.Extensions;
 using Abp.Domain.Repositories;
 using Abp.Modules;
 using AssetManagement.Authorization.Roles;
 using AssetManagement.Authorization.Users;
+using AssetManagement.Depts;
 using AssetManagement.Depts.Dto;
 using AssetManagement.Roles.Dto;
 using AssetManagement.Users.Dto;
+using AssetManagement.Vocabularies;
+using AssetManagement.Vocabularies.Dto;
 
 namespace AssetManagement
 {
@@ -40,7 +44,9 @@ namespace AssetManagement
                 cfg.CreateMap<CreateUserDto, User>();
                 cfg.CreateMap<CreateUserDto, User>().ForMember(x => x.Roles, opt => opt.Ignore());
 
-                cfg.CreateMap<DeptDto, DeptDto>();
+                cfg.CreateMap<DeptDto, Deptment>();
+
+                cfg.CreateMap<VocabularyAssetItemOutput, VocabularyItem>();
             });
         }
     }

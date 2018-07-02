@@ -252,9 +252,17 @@
     <Compile Include="Sessions\ISessionAppService.cs" />
     <Compile Include="Sessions\SessionAppService.cs" />
     <Compile Include="Users\UserAppService.cs" />
-    <Compile Include="Vocabularies\Dto\VocabularyAssetItemInput.cs" />
+    <Compile Include="Vocabularies\Dto\CreateVocabularyAreaItemInput.cs" />
+    <Compile Include="Vocabularies\Dto\CreateVocabularyAssetItemInput.cs" />
+    <Compile Include="Vocabularies\Dto\CreateVocabularyItemInput.cs" />
+    <Compile Include="Vocabularies\Dto\UpdateVocabularyAreaItemInput.cs" />
+    <Compile Include="Vocabularies\Dto\UpdateVocabularyAssetItemInput.cs" />
+    <Compile Include="Vocabularies\Dto\UpdateVocabularyItemInput.cs" />
+    <Compile Include="Vocabularies\Dto\VocabularyAreaItemOutput.cs" />
+    <Compile Include="Vocabularies\Dto\VocabularyAssetItemOutput.cs" />
     <Compile Include="Vocabularies\Dto\VocabularyConst.cs" />
     <Compile Include="Vocabularies\Dto\VocabularyInput.cs" />
+    <Compile Include="Vocabularies\Dto\VocabularyItemOutput.cs" />
     <Compile Include="Vocabularies\IVocabularyAppService.cs" />
     <Compile Include="Vocabularies\VocabularyAppService.cs" />
   </ItemGroup>
