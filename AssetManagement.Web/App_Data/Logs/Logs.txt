@@ -6417,3 +6417,12 @@ DEBUG 2018-06-27 22:32:59,129 [67   ] Abp.Web.SignalR.Hubs.AbpCommonHub        -
 DEBUG 2018-06-27 22:32:59,130 [53   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected (on reconnected event): {"ConnectionId":"359f978e-ae47-47f2-8b22-169de4c275d0","IpAddress":null,"TenantId":null,"UserId":1,"ConnectTime":"2018-06-27T22:32:59.0738838+08:00","Properties":{}}
 DEBUG 2018-06-27 22:32:59,131 [64   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected (on reconnected event): {"ConnectionId":"ecf92d78-adec-4f35-931c-069afe6629e7","IpAddress":null,"TenantId":null,"UserId":1,"ConnectTime":"2018-06-27T22:32:59.0868958+08:00","Properties":{}}
 DEBUG 2018-06-27 22:32:59,132 [55   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected (on reconnected event): {"ConnectionId":"73aa1306-7a02-4de8-9c6f-c396310156cf","IpAddress":null,"TenantId":null,"UserId":1,"ConnectTime":"2018-06-27T22:32:59.124422+08:00","Properties":{}}
+DEBUG 2018-06-27 22:34:10,413 [17   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 5b1d18f5-6d7f-466a-94cd-5a19f987db64
+DEBUG 2018-06-27 22:34:10,414 [11   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 73aa1306-7a02-4de8-9c6f-c396310156cf
+DEBUG 2018-06-27 22:34:10,433 [17   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: b990a459-aea5-41e7-bda3-645e0c7cb685
+DEBUG 2018-06-27 22:34:10,445 [55   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 359f978e-ae47-47f2-8b22-169de4c275d0
+DEBUG 2018-06-27 22:34:10,476 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 51d2fbaf-86c8-4681-a4e0-87a11fd61249
+DEBUG 2018-06-27 22:34:10,487 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: d0363a39-ba98-457b-9920-787e6257d7a7
+DEBUG 2018-06-27 22:34:10,506 [34   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 3f3c0d17-2a0f-4f63-a08f-53a1db1a6aeb
+DEBUG 2018-06-27 22:34:10,525 [34   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 24f941ca-2c0f-4495-a094-98db1a00f333
+DEBUG 2018-06-27 22:34:10,538 [55   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: ecf92d78-adec-4f35-931c-069afe6629e7
