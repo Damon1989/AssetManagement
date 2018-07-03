@@ -144,5 +144,35 @@ namespace AssetManagement.Vocabularies
 
             return vocabularyItems;
         }
+
+        public async Task EnableVocabularyItem(VocabularyItemIdInput vocabularyItemIdInput)
+        {
+            var item = await _vocabularyItemRepository.FirstOrDefaultAsync(c => c.Id == vocabularyItemIdInput.Id)
+                .ConfigureAwait(false);
+            if (item != null)
+            {
+                item.Enabled();
+            }
+        }
+
+        public async Task DisableVocabularyItem(VocabularyItemIdInput vocabularyItemIdInput)
+        {
+            var item = await _vocabularyItemRepository.FirstOrDefaultAsync(c => c.Id == vocabularyItemIdInput.Id)
+                .ConfigureAwait(false);
+            if (item != null)
+            {
+                item.Disabled();
+            }
+        }
+
+        public async Task RemoveVocabularyItem(VocabularyItemIdInput vocabularyItemIdInput)
+        {
+            var item = await _vocabularyItemRepository.FirstOrDefaultAsync(c => c.Id == vocabularyItemIdInput.Id)
+                .ConfigureAwait(false);
+            if (item != null)
+            {
+                await _vocabularyItemRepository.DeleteAsync(item).ConfigureAwait(false);
+            }
+        }
     }
 }

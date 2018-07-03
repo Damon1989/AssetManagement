@@ -1,6 +1,8 @@
-﻿using System.Data.Common;
+﻿using System;
+using System.Data.Common;
 using System.Data.Entity;
 using Abp.Zero.EntityFramework;
+using AssetManagement.Assets;
 using AssetManagement.Authorization.Roles;
 using AssetManagement.Authorization.Users;
 using AssetManagement.Depts;
@@ -22,6 +24,7 @@ namespace AssetManagement.EntityFramework
         public AssetManagementDbContext()
             : base("Default")
         {
+            Database.SetInitializer<AssetManagementDbContext>(new AssetManagementInitializer());
         }
 
         /* NOTE:
@@ -32,6 +35,7 @@ namespace AssetManagement.EntityFramework
         public AssetManagementDbContext(string nameOrConnectionString)
             : base(nameOrConnectionString)
         {
+            Database.SetInitializer<AssetManagementDbContext>(new AssetManagementInitializer());
         }
 
         //This constructor is used in tests
@@ -50,11 +54,26 @@ namespace AssetManagement.EntityFramework
             modelBuilder.Entity<Deptment>().ToTable("basic_Departments");
             modelBuilder.Entity<Vocabulary>().ToTable("basic_Vocabularies");
             modelBuilder.Entity<VocabularyItem>().ToTable("basic_VocabularyItems");
+            modelBuilder.Entity<Asset>().ToTable("b_Assets");
             base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<Deptment> Deptment { get; set; }
         public DbSet<Vocabulary> Vocabularies { get; set; }
         public DbSet<VocabularyItem> VocabularyItems { get; set; }
+        public DbSet<Asset> Assets { get; set; }
+    }
+
+    public class AssetManagementInitializer : DropCreateDatabaseIfModelChanges<AssetManagementDbContext>
+    {
+        protected override void Seed(AssetManagementDbContext context)
+        {
+            base.Seed(context);
+
+            var dept = new Deptment();
+            dept.Add("001", "主部门", Guid.Empty.ToString().Replace("-", ""));
+            context.Deptment.Add(dept);
+            context.SaveChanges();
+        }
     }
 }

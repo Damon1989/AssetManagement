@@ -202,6 +202,7 @@
     <Compile Include="AssetManagementConsts.cs" />
     <Compile Include="AssetManagementCoreModule.cs" />
     <Compile Include="AppVersionHelper.cs" />
+    <Compile Include="Assets\Asset.cs" />
     <Compile Include="Authorization\AssetManagementAuthorizationProvider.cs" />
     <Compile Include="Authorization\LoginManager.cs" />
     <Compile Include="Authorization\PermissionChecker.cs" />

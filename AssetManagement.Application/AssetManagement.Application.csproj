@@ -261,6 +261,7 @@
     <Compile Include="Vocabularies\Dto\VocabularyAreaItemOutput.cs" />
     <Compile Include="Vocabularies\Dto\VocabularyAssetItemOutput.cs" />
     <Compile Include="Vocabularies\Dto\VocabularyConst.cs" />
+    <Compile Include="Vocabularies\Dto\VocabularyItemIdInput.cs" />
     <Compile Include="Vocabularies\Dto\VocabularyInput.cs" />
     <Compile Include="Vocabularies\Dto\VocabularyItemOutput.cs" />
     <Compile Include="Vocabularies\IVocabularyAppService.cs" />

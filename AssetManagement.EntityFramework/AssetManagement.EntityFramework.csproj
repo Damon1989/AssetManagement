@@ -255,6 +255,14 @@
     <Compile Include="Migrations\201807020933284_addvocabularyitemisactive.Designer.cs">
       <DependentUpon>201807020933284_addvocabularyitemisactive.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807030252163_assetinit.cs" />
+    <Compile Include="Migrations\201807030252163_assetinit.Designer.cs">
+      <DependentUpon>201807030252163_assetinit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807030313350_addassetcode.cs" />
+    <Compile Include="Migrations\201807030313350_addassetcode.Designer.cs">
+      <DependentUpon>201807030313350_addassetcode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="AssetManagementDataModule.cs" />
@@ -304,6 +312,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807020933284_addvocabularyitemisactive.resx">
       <DependentUpon>201807020933284_addvocabularyitemisactive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807030252163_assetinit.resx">
+      <DependentUpon>201807030252163_assetinit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807030313350_addassetcode.resx">
+      <DependentUpon>201807030313350_addassetcode.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

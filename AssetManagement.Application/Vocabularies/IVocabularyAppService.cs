@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
 using AssetManagement.Vocabularies.Dto;
@@ -24,5 +20,11 @@ namespace AssetManagement.Vocabularies
         Task CreateAreaVocabulary(CreateVocabularyAreaItemInput input);
 
         Task UpdateAreaVocabulary(UpdateVocabularyAreaItemInput input);
+
+        Task EnableVocabularyItem(VocabularyItemIdInput vocabularyItemIdInput);
+
+        Task DisableVocabularyItem(VocabularyItemIdInput vocabularyItemIdInput);
+
+        Task RemoveVocabularyItem(VocabularyItemIdInput vocabularyItemIdInput);
     }
 }

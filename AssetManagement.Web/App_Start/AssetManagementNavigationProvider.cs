@@ -145,7 +145,7 @@ namespace AssetManagement.Web
                 PageNames.Vocabularies,
                 L("Vocabularies"),
                 url: "Vocabularies",
-                icon: "perple");
+                icon: "people");
 
             context.Manager.MainMenu.AddItem(dept);
             context.Manager.MainMenu.AddItem(vocabulary);

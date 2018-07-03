@@ -2,19 +2,137 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="row">
+    <div class="col-md-4">
+        <div id="depttree"></div>
+    </div>
+    <div class="col-md-8">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a href="#home" data-toggle="tab">
+                    基本信息
+                </a>
+            </li>
+            <li><a href="#ios" data-toggle="tab">用户</a></li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="home">
+                <p>菜鸟教程是一个提供最新的web技术站点，本站免费提供了建站相关的技术文档，帮助广大web技术爱好者快速入门并建立自己的网站。菜鸟先飞早入行——学的不仅是技术，更是梦想。</p>
+            </div>
+            <div class="tab-pane fade" id="ios">
+                <p>
+                    iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple
+                    TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+@section styles{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
 
+}
 @section scripts{
-    <script type="text/javascript">
-        $(function () {
-            //abp.services.app.dept.createDept({
-            //    "code": "string",
-            //    "name": "string",
-            //    "parentId": "string"
-            //}).done(function () {
-            //    abp.notify.success("successfully  created a dept");
-            //});
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
 
+    <script type="text/javascript">
+        $(function() {
+            $.jstree.defaults.core.themes.variant = "large";
+
+            var treeitem = function(id, parent, text) {
+                this.id = id;
+                this.parent = parent;
+                this.text = text;
+            }
+
+            abp.services.app.dept.getDepts().done(function(result) {
+                var array = new Array();
+                for (var i = 0; i < result.items.length; i++) {
+                    var item = result.items[i];
+                    array.push(new treeitem(item.id,
+                        item.parentId.replace("00000000000000000000000000000000", "#"),
+                        item.name));
+                }
+                console.log(array);
+                $('#depttree')
+                    .on('changed.jstree', function(e,data) {
+                        console.log(data.instance.get_node(data.selected[0]).id);
+                    })
+                    .jstree({
+                        'core': {
+                            'data': array
+                        },
+                        'plugins': ['wholerow']
+
+                    });
+                //abp.notify.success("successfully  deleted a dept");
+            });
+
+            /*
+            $('#depttree').jstree({
+                'core': {
+                    'data': [
+                        {
+                            'text': "Root node",
+                            //'state': { "opened": true },
+                            'children': [
+                                {
+                                    'text': "Child node 1",
+                                    // 'state': { "selected": true },
+                                    //"icon": "jstree-file"
+                                }, {
+                                    'text': "Child node 3",
+                                    // 'state': { "selected": true },
+                                    //"icon": "jstree-file"
+                                }, {
+                                    'text': "Child node 2",
+                                    // 'state': { "disabled": true }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                'plugins':['wholerow']
+
+            });
+        */
+
+        })
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            /*
+            abp.services.app.dept.createDept({
+                "code": "001",
+                "name": "主部门",
+                "parentId": "00000000000000000000000000000000"
+            }).done(function () {
+                abp.notify.success("successfully  created a dept");
+            });
+              */
+            /*
+            abp.services.app.dept.createDept({
+                "code": "001001",
+                "name": "部门1",
+                "parentId": "1c62b2dbcdbc43c091351a89d4e0c1f7"
+            }).done(function () {
+                abp.notify.success("successfully  created a dept");
+            });
+            abp.services.app.dept.createDept({
+                "code": "001002",
+                "name": "部门2",
+                "parentId": "1c62b2dbcdbc43c091351a89d4e0c1f7"
+            }).done(function () {
+                abp.notify.success("successfully  created a dept");
+            });
+            abp.services.app.dept.createDept({
+                "code": "001003",
+                "name": "部门3",
+                "parentId": "1c62b2dbcdbc43c091351a89d4e0c1f7"
+            }).done(function () {
+                abp.notify.success("successfully  created a dept");
+            });
+        */
             //abp.services.app.dept.editDept({
             //    "id": "6d5d037393bd469584cd91f09f683a0e",
             //    "code": "string1",
@@ -23,12 +141,13 @@
             //}).done(function () {
             //    abp.notify.success("successfully  edited a dept");
             //});
-
-            abp.services.app.dept.enableDept({
-                "id": "401360afd72b4f648592ab00e39666ad"
-            }).done(function () {
-                abp.notify.success("successfully  created a dept");
-            });
+            /*
+           abp.services.app.dept.enableDept({
+               "id": "401360afd72b4f648592ab00e39666ad"
+           }).done(function () {
+               abp.notify.success("successfully  created a dept");
+           });
+       */
             /*
       abp.services.app.dept.disableDept({
           "id": "401360afd72b4f648592ab00e39666ad"
@@ -36,6 +155,7 @@
           abp.notify.success("successfully  disabled a dept");
       });    */
 
+            /*
      abp.services.app.dept.removeDept({
          "id": "dae7edc0a14b4b21b7dcdbe2b164907c"
      }).done(function () {
@@ -46,6 +166,7 @@
          console.log(result);
          abp.notify.success("successfully  deleted a dept");
      });
- })
+        */
+        })
     </script>
 }

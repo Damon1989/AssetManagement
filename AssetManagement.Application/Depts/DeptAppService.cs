@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Abp.Application.Services.Dto;
 using Abp.Domain.Repositories;
+using Abp.UI;
 using AssetManagement.Depts.Dto;
 
 namespace AssetManagement.Depts
@@ -16,9 +18,29 @@ namespace AssetManagement.Depts
             _deptmentRepository = deptmentRepository;
         }
 
+        private async Task CheckCreateDept(string code, string parentId)
+        {
+            var dept = new Deptment();
+            if (parentId != Guid.Empty.ToString().Replace("-", ""))
+            {
+                dept = await _deptmentRepository.FirstOrDefaultAsync(d => d.Id == parentId).ConfigureAwait(false);
+                if (dept == null)
+                {
+                    throw new UserFriendlyException($"父级部门不存在");
+                }
+            }
+            dept = await _deptmentRepository.FirstOrDefaultAsync(d => d.Code == code)
+               .ConfigureAwait(false);
+            if (dept != null)
+            {
+                throw new UserFriendlyException($"部门编号{code}必须唯一");
+            }
+        }
+
         public async Task CreateDept(DeptInput deptInput)
         {
             var dept = new Deptment();
+            await CheckCreateDept(deptInput.Code, deptInput.ParentId).ConfigureAwait(false);
             dept.Add(deptInput.Code, deptInput.Name, deptInput.ParentId);
             await _deptmentRepository.InsertAsync(dept).ConfigureAwait(false);
         }
