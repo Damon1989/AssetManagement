@@ -82,14 +82,21 @@ namespace AssetManagement.Depts
             }
         }
 
-        [HttpGet]
-        public async Task<ListResultDto<DeptDto>> GetDepts()
+        public async Task<List<DeptDto>> GetDepts(string parentId)
         {
-            var depts = await _deptmentRepository.GetAllListAsync().ConfigureAwait(false);
+            var depts = await _deptmentRepository.GetAllListAsync(c => c.ParentId == parentId).ConfigureAwait(false);
 
-            return await Task.FromResult(new ListResultDto<DeptDto>(
-                ObjectMapper.Map<List<DeptDto>>(depts)
-            )).ConfigureAwait(false);
+            //return await Task.FromResult(new ListResultDto<DeptDto>(
+            //    ObjectMapper.Map<List<DeptDto>>(depts)
+            //)).ConfigureAwait(false);
+
+            var result = new List<DeptDto>();
+            depts.ForEach(dept =>
+            {
+                result.Add(new DeptDto { Id = dept.Id, Text = dept.Name });
+            });
+
+            return result;
         }
     }
 }

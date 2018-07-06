@@ -1,6 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Web.Http;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
+using Abp.Web.Models;
 using AssetManagement.Depts.Dto;
 
 namespace AssetManagement.Depts
@@ -17,6 +20,8 @@ namespace AssetManagement.Depts
 
         Task RemoveDept(DeptIdInput deptIdInput);
 
-        Task<ListResultDto<DeptDto>> GetDepts();
+        [HttpGet]
+        [DontWrapResult]
+        Task<List<DeptDto>> GetDepts(string parentId);
     }
 }

@@ -71,7 +71,7 @@ namespace AssetManagement.EntityFramework
             base.Seed(context);
 
             var dept = new Deptment();
-            dept.Add("001", "主部门", Guid.Empty.ToString().Replace("-", ""));
+            dept.Add("001", "主部门", "#");
             context.Deptment.Add(dept);
             context.SaveChanges();
         }
